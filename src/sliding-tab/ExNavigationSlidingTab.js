@@ -89,6 +89,7 @@ class ExNavigationSlidingTab extends PureComponent<any, Props, State> {
     pressColor: 'rgba(0,0,0,0.2)',
     tabStyle: {},
     renderBefore: () => null,
+    swipeEnabled: true
   };
 
   static contextTypes = {
@@ -184,6 +185,8 @@ class ExNavigationSlidingTab extends PureComponent<any, Props, State> {
 
     return (
       <TabViewAnimated
+        swipeEnabled={this.props.swipeEnabled}
+        onChangePosition={this.props.onChangePosition}
         lazy={this.props.lazy}
         style={[styles.container, this.props.style]}
         navigationState={navigationState}
