@@ -288,6 +288,11 @@ class ExNavigationSlidingTab extends PureComponent<any, Props, State> {
 
   _setActiveTab = (i) => {
     let tabItem = this.state.tabItems[i];
+
+    if (!tabItem) {
+      return
+    }
+
     let key = tabItem.id;
     this._getNavigatorContext().jumpToTab(key);
 
